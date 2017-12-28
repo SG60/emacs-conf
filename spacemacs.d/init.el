@@ -326,8 +326,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default
    mac-right-option-modifier nil
-   evil-escape-delay 0.2
-   ))
+   evil-escape-delay 0.2)
+  (global-git-commit-mode t)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
