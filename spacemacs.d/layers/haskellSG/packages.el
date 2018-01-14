@@ -30,7 +30,11 @@
 ;;; Code:
 
 (defconst haskellSG-packages
-  '()
+  '(
+    lsp-mode
+    (company-lsp :toggle (configuration-layer/package-usedp 'company))
+    haskell-mode
+    )
   "The list of Lisp packages required by the haskellSG layer.
 
 Each entry is either:
@@ -58,5 +62,12 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun haskellSG/init-lsp-mode ()
+    (use-package lsp-mode
+      :defer t))
+
+(defun haskellSG/init-haskell-mode ()
+    (use-package haskell-mode
+      :defer t))
 
 ;;; packages.el ends here
