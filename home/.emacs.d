@@ -1,1 +1,1 @@
-../emacsdev.d
+../emacs.d
