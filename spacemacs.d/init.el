@@ -54,7 +54,6 @@ values."
      syntax-checking
      version-control
      shell-scripts
-     ;; (haskellSG :variables haskell-process-type 'stack-ghci)
      (haskell :variables
               haskell-process-type 'stack-ghci
               haskell-completion-backend 'intero
