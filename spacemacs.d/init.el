@@ -44,8 +44,8 @@ This function should only modify configuration layer settings."
      (auto-completion :variables
                       auto-completion-return-key-behavior nil
                       auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence "jk"
-                      auto-completion-complete-with-key-sequence-delay 0.2
+                      ;; auto-completion-complete-with-key-sequence "jk"
+                      ;; auto-completion-complete-with-key-sequence-delay 0.2
                       auto-completion-private-snippets-directory nil
                       auto-completion-enable-help-tooltip 'manual)
      emacs-lisp
@@ -67,7 +67,8 @@ This function should only modify configuration layer settings."
               haskell-completion-backend 'intero
               haskell-enable-hindent-style "fundamental")
      python
-     ipython-notebook
+     (ipython-notebook :variables
+                       ein:completion-backend 'ein:use-custom-backend) ;; Disables completion. ein:use-company-backend is buggy at the moment
      )
 
    ;; List of additional packages that will be installed without being
