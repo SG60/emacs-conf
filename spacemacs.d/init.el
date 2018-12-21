@@ -481,7 +481,9 @@ before packages are loaded."
     (spacemacs/set-leader-keys-for-major-mode 'haskell-mode "F" 'hindent-reformat-buffer))
   (add-to-list 'default-frame-alist '(height . 80))
   (add-to-list 'default-frame-alist '(width . 120))
+  ;;use ycm style tab completion
   (company-tng-configure-default)
+  ;;make ligatures work
   (mac-auto-operator-composition-mode t))
 
 (defun dotspacemacs/emacs-custom-settings ()
