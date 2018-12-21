@@ -221,11 +221,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Fira Code"
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -478,7 +478,11 @@ before packages are loaded."
    evil-escape-delay 0.2)
   (global-git-commit-mode t)
   (with-eval-after-load 'haskell-mode
-   (spacemacs/set-leader-keys-for-major-mode 'haskell-mode "F" 'hindent-reformat-buffer)))
+    (spacemacs/set-leader-keys-for-major-mode 'haskell-mode "F" 'hindent-reformat-buffer))
+  (add-to-list 'default-frame-alist '(height . 80))
+  (add-to-list 'default-frame-alist '(width . 120))
+  (company-tng-configure-default)
+  (mac-auto-operator-composition-mode t))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
